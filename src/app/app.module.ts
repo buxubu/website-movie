@@ -9,6 +9,13 @@ import { IonicModule } from '@ionic/angular';
 import { ListMoviesComponent } from './list-movies/list-movies.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ListMoviesCategoriesComponent } from './list-movies-categories/list-movies-categories.component';
+import { ListMoviesGenreComponent } from './list-movies-genre/list-movies-genre.component';
+import { ListMoviesCountryComponent } from './list-movies-country/list-movies-country.component';
+import { SearchMovieComponent } from './search-movie/search-movie.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { EpisodeMovieComponent } from './episode-movie/episode-movie.component';
 
 @NgModule({
   declarations: [
@@ -17,13 +24,22 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FooterComponent,
     ListMoviesComponent,
     MovieDetailsComponent,
+    ListMoviesCategoriesComponent,
+    ListMoviesGenreComponent,
+    ListMoviesCountryComponent,
+    SearchMovieComponent,
+    EpisodeMovieComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     IonicModule.forRoot(),
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatPaginatorModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

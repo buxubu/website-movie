@@ -1,3 +1,4 @@
+
 <header class="header" data-header>
     <div class="container">
 
@@ -8,25 +9,14 @@
         </a>
 
         <div class="header-actions">
-
+          <input type="text" placeholder="Tìm kiếm..." name="searchText" [(ngModel)]="searchText">
             <button class="search-btn">
-                <ion-icon name="search-outline"></ion-icon>
+              <a [routerLink]="['movies/searchMovie/', searchText]" style="color: white;">
+                <ion-icon class="fs" name="search-outline" (click)="sendNameMovie()"></ion-icon>
+              </a>
             </button>
 
-            <div class="lang-wrapper">
-                <label for="language">
-                    <ion-icon name="globe-outline"></ion-icon>
-                </label>
-
-                <select name="language" id="language">
-                    <option value="en">EN</option>
-                    <option value="au">AU</option>
-                    <option value="ar">AR</option>
-                    <option value="tu">TU</option>
-                </select>
-            </div>
-
-            <button class="btn btn-primary">Sign in</button>
+            <button class="btn btn-primary">Đăng Nhập</button>
 
         </div>
 
@@ -51,24 +41,49 @@
             <ul class="navbar-list">
 
                 <li>
-                    <a href="./index.html" class="navbar-link">Home</a>
+                    <a routerLink="/movies" routerLinkActive="is-active" class="navbar-link">Trang Chủ</a>
                 </li>
 
-                <li>
-                    <a href="#" class="navbar-link">Movie</a>
+                <li *ngFor="let item of lstCategory">
+                    <a [routerLink]="['/movies/moviesCategories/', item.idCategory]"  class="navbar-link">{{item.nameCategory}}</a>
                 </li>
 
-                <li>
-                    <a href="#" class="navbar-link">Tv Show</a>
-                </li>
 
                 <li>
-                    <a href="#" class="navbar-link">Web Series</a>
+                    <a class="navbar-link">Thể Loại</a>
+                    <div class="mega-box">
+                      <div class="content">
+                          <div class="row">
+                            <ul class="mega-links">
+                              <li *ngFor="let item of lstGenre">
+                                <a [routerLink]="['/movies/moviesGenres/', item.idGenre]" class="navbar-link">{{item.nameGenre}}</a>
+                            </li>
+                            </ul>
+                          </div>
+                      </div>
+                    </div>
                 </li>
 
+
+
                 <li>
+                  <a class="navbar-link">Quốc gia</a>
+                  <div class="mega-box">
+                    <div class="content">
+                        <div class="row">
+                          <ul class="mega-links">
+                            <li *ngFor="let item of lstCountry">
+                              <a [routerLink]="['/movies/moviesCountries/', item.idCountry]" class="navbar-link">{{item.nameCountry}}</a>
+                          </li>
+                          </ul>
+                        </div>
+                    </div>
+                  </div>
+              </li>
+
+                <!-- <li>
                     <a href="#" class="navbar-link">Pricing</a>
-                </li>
+                </li> -->
 
             </ul>
 

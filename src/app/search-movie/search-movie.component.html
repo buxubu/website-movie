@@ -1,0 +1,82 @@
+
+
+<section class="top-rated">
+
+  <ul class="page">
+    <a (click)="firstPage()"><li><img src="./assets/images/double-arrow.png" alt=""></li></a>
+    <a (click)="onPrevious()"><li [ngClass]="1 == (lstMovie.pagings.currentPage) ? 'disabled' : '' "><img src="./assets/images/left.png"></li></a>
+    <a *ngFor="let item of [].constructor(lstMovie.pagings.totalPage); let i = index;" (click)="choosePage(i+1)"><li [ngClass]=" i + 1 == (lstMovie.pagings.currentPage) ? 'active' : '' " >{{i + 1}}</li></a>
+    <a (click)="onNext()"><li [ngClass]="lstMovie.pagings.totalPage == (lstMovie.pagings.currentPage) ? 'disabled' : '' " ><img src="./assets/images/right.png"></li></a>
+    <a (click)="lastPage()"><li><img src="./assets/images/right-chevron.png" alt=""></li></a>
+  </ul>
+
+  <div class="container">
+    <ul class="movies-list">
+
+      <li *ngFor="let item of lstMovie.listMovie ">
+        <div class="movie-card">
+
+          <a [routerLink]="['/movies/moviedetail/', item.idMovie]">
+            <figure class="card-banner">
+              <img src="{{item.images}}">
+            </figure>
+          </a>
+
+          <div class="title-wrapper">
+            <a [routerLink]="['/movies/moviedetail/', item.idMovie]">
+              <h3 class="card-title">{{item.nameMovie}}</h3>
+            </a>
+
+            <time>{{item.releaseDate|date:"dd/MM/yyyy HH:mm" | slice: 6:10}}</time>
+          </div>
+
+          <div class="card-meta">
+            <div class="badge badge-outline">{{item.movieStatus}}</div>
+
+            <div class="duration">
+              <ion-icon name="time-outline"></ion-icon>
+
+              <time datetime="PT122M">{{item.showtimes}}</time>
+            </div>
+
+            <div class="rating">
+              <ion-icon name="star"></ion-icon>
+
+              <data>7.8</data>
+            </div>
+          </div>
+
+        </div>
+      </li>
+
+    </ul>
+
+  </div>
+
+  <ul class="page">
+    <a (click)="firstPage()"><li><img src="./assets/images/double-arrow.png" alt=""></li></a>
+    <a (click)="onPrevious()"><li [ngClass]="1 == (lstMovie.pagings.currentPage) ? 'disabled' : '' "><img src="./assets/images/left.png"></li></a>
+    <a *ngFor="let item of [].constructor(lstMovie.pagings.totalPage); let i = index;" (click)="choosePage(i+1)"><li [ngClass]=" i + 1 == (lstMovie.pagings.currentPage) ? 'active' : '' " >{{i + 1}}</li></a>
+    <a (click)="onNext()"><li [ngClass]="lstMovie.pagings.totalPage == (lstMovie.pagings.currentPage) ? 'disabled' : '' " ><img src="./assets/images/right.png"></li></a>
+    <a (click)="lastPage()"><li><img src="./assets/images/right-chevron.png" alt=""></li></a>
+  </ul>
+
+</section>
+
+
+
+
+
+
+
+
+<!--
+  - #TV SERIES
+-->
+
+
+
+
+
+
+

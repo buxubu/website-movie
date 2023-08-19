@@ -1,0 +1,120 @@
+
+<section class="movie-detail" >
+  <div class="container" >
+
+    <figure class="movie-detail-banner" >
+
+      <img src="{{lstMovie.images}}">
+
+      <!-- <button class="play-btn" >
+        <a href="{{video.nameVideo}}"><ion-icon name="play-circle-outline"></ion-icon></a>
+      </button> -->
+
+    </figure>
+
+    <div class="movie-detail-content" >
+
+      <p class="detail-subtitle">Tập {{objVideo.episode}}</p>
+
+      <h1 class="h1 detail-title" >
+        {{lstMovie.nameMovie}}
+      </h1>
+
+      <div class="meta-wrapper">
+
+        <div class="ganre-wrapper" >
+          <a href=""></a>
+        </div>
+
+        <div class="date-time">
+
+          <div>
+            <ion-icon name="calendar-outline"></ion-icon>
+
+            <time >{{lstMovie.releaseDate | date:"dd/MM/yyyy HH:mm" | slice: 0:10}}</time>
+          </div>
+
+          <div>
+            <ion-icon name="time-outline"></ion-icon>
+
+            <time >{{lstMovie.showtimes}}</time>
+          </div>
+
+        </div>
+
+      </div>
+
+      <p class="storyline">
+        {{lstMovie.description}}
+      </p>
+
+      <div>
+        <video controls  preload="auto" src="{{objVideo.nameVideo}}" width="1000"></video>
+      </div>
+
+
+        <ul class="list-episode">
+          <a *ngFor="let item of lstVideo" [routerLink]="['/moviedetail/', item.idMovie, item.idVideo]"><li>Tập {{item.episode}}</li></a>
+        </ul>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+<!--
+  - #TV SERIES
+-->
+
+<section class="tv-series">
+  <div class="container">
+
+    <p class="section-subtitle">Best TV Series</p>
+
+    <h2 class="h2 section-title">World Best TV Series</h2>
+
+    <ul class="movies-list">
+
+      <li>
+        <div class="movie-card">
+
+          <a href="./movie-details.html">
+            <figure class="card-banner">
+              <img src="./assets/images/series-1.png" alt="Moon Knight movie poster">
+            </figure>
+          </a>
+
+          <div class="title-wrapper">
+            <a href="./movie-details.html">
+              <h3 class="card-title">Moon Knight</h3>
+            </a>
+
+            <time datetime="2022">2022</time>
+          </div>
+
+          <div class="card-meta">
+            <div class="badge badge-outline">2K</div>
+
+            <div class="duration">
+              <ion-icon name="time-outline"></ion-icon>
+
+              <time datetime="PT47M">47 min</time>
+            </div>
+
+            <div class="rating">
+              <ion-icon name="star"></ion-icon>
+
+              <data>8.6</data>
+            </div>
+          </div>
+
+        </div>
+      </li>
+    </ul>
+
+  </div>
+</section>

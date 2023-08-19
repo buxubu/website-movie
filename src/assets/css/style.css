@@ -457,7 +457,8 @@ body.active {
 }
 
 .navbar {
-  position: fixed;
+  /* position: fixed; */
+  position: relative;
   top: 0;
   right: -300px;
   background: var(--eerie-black);
@@ -1031,7 +1032,7 @@ body.active {
 
 
 /*-----------------------------------*\
- * #MOVIE DETAIL 
+ * #MOVIE DETAIL
 \*-----------------------------------*/
 
 .movie-detail {
@@ -1800,5 +1801,104 @@ body.active {
     font-size: 30px;
     transform: rotate(-0.25turn);
   }
+
+  .mega-box{
+    position: absolute;
+    top: 85px;
+    width: auto;
+    left: auto;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3 ease;
+  }
+
+  .mega-box content{
+    background-color: black;
+    padding: 25px 20px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  };
+
+  .content .row{
+    width: calc(25% - 30px);
+    line-height: 45px;
+
+  }
+
+  .content .row .mega-links{
+    margin-left: -40px;
+  }
+
+  .content .row:nth-child(1),
+  .content .row:nth-child(2){
+    border-left: 0px;
+  }
+
+
+  .row .mega-links li{
+    padding: 10px 20px;
+  }
+
+  .row .mega-links li a{
+    padding: 0 20px;
+    font-size: 17px;
+    display: block;
+  }
+
+  .navbar-list li:hover .mega-box{
+    top: 100px;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .navbar-link{
+    cursor: pointer;
+  }
+
+
+  .header-actions:hover input{
+    width: 150px;
+    padding: 5px;
+  }
+
+  .header-actions input{
+    width: 0;
+    color: white;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    transition: 0.8s;
+    background: transparent;
+  }
+
+  .page{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 50px;
+    justify-content: center;
+  }
+
+  .page li{
+    margin:2px;
+    padding: 16%;
+    background-color: yellow;
+    width: 30px;
+    text-align: center;
+    color: black;
+  }
+
+
+  .page a:hover li{
+    cursor: pointer;
+  }
+
+
+
+
+
 
 }
